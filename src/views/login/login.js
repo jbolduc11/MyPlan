@@ -52,12 +52,14 @@ class Login extends Component {
 	render() {
 		const register = this.state.showRegister ? <Register register={this.register} /> : '';
 		return (
+		<form action="action_page.php">
 			<div className="login">
 				{register}
 				{this.state.showRegister ? (
 					''
 				) : (
 					<div>
+						<p>My Plan</p>
 						<input
 							type="text"
 							placeholder="Email"
@@ -72,11 +74,12 @@ class Login extends Component {
 							value={this.state.password}
 							onChange={this.handleChange}
 						/>
-						<button onClick={this.login}>login</button>
-						<button onClick={this.showRegister}>register</button>
+						<button onClick={this.login}>Login</button>
+						<button onClick={this.showRegister}>Register</button>
 					</div>
 				)}
 			</div>
+		</form>
 		);
 	}
 }
