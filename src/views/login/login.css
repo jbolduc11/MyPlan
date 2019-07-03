@@ -5,9 +5,9 @@ body {
 }
 .login {
    background-color: rgba(255, 255, 255, .01);
-   justify-content: space-around;
    justify-content: center;
    align-items: center;
+   flex-direction: row;
 }
 form {
     
@@ -23,6 +23,7 @@ form {
     font-style: oblique;
     margin: auto;
     text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 
 }
 
@@ -33,6 +34,8 @@ form {
     display: inline-flex;
     border: 1px solid #ccc;
     box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
   }
 
   button {
@@ -43,6 +46,9 @@ form {
     border: none;
     cursor: pointer;
     width: 100%;
+    border-radius: 5px;
+    font-size: medium;
+
   }
   
   button:hover {
