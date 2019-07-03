@@ -41,8 +41,8 @@ app.use((req, res, next)=>{
     }
 })  
 //product routes. 
-app.get('/api/products', product.getAll)
-app.get('/api/products/:id', product.getProductById)
+// app.get('/api/products', product.getAll)
+// app.get('/api/products/:id', product.getProductById)
 
 
 //cart routes

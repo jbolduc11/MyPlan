@@ -10,18 +10,18 @@ import Product from './components/product/product'
     // http://localhost:8065/api/products
 
     componentDidMount(){
-        axios.get('/api/products')
-        .then(({data})=>{
-            if(data.success){
-                this.setState({
-                    products:data.products
-                })
-            } else if(!data.isLoggedIn){
-                this.props.history.push('/')
-            } else{
-                alert('Something blew up!')
-            }
-        })
+        // axios.get('/api/products')
+        // .then(({data})=>{
+        //     if(data.success){
+        //         this.setState({
+        //             products:data.products
+        //         })
+        //     } else if(!data.isLoggedIn){
+        //         this.props.history.push('/')
+        //     } else{
+        //         alert('Something blew up!')
+        //     }
+        // })
     }
     render() {
         const products = this.state.products.map((e, r)=>{
