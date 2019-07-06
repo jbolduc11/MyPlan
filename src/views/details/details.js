@@ -10,34 +10,34 @@ class Details extends Component {
 	};
 	// http://localhost:8065/api/products/2
 	componentDidMount() {
-		axios.get(`/api/products/${this.props.match.params.id}`).then(({ data }) => {
-			if (data.success) {
-				this.setState({
-					product: data.product
-				});
-			} else if (!data.isLoggedIn) {
-				this.props.history.push('/');
-			} else {
-				alert('something blew up');
-			}
-		});
+		// axios.get(`/api/products/${this.props.match.params.id}`).then(({ data }) => {
+		// 	if (data.success) {
+		// 		this.setState({
+		// 			product: data.product
+		// 		});
+		// 	} else if (!data.isLoggedIn) {
+		// 		this.props.history.push('/');
+		// 	} else {
+		// 		alert('something blew up');
+		// 	}
+		// });
 	}
 
 	addToCart = () => {
 		debugger
 		const product = this.state.product;
-		axios.post('/api/cart', { product })
-			.then(({ data }) => {
-				debugger
-				if (data.success) {
-					this.props.setCart(data.cartItems);
-					this.props.history.push('/cart');
-				} else if (!data.isLoggedIn) {
-					this.props.history.push('/');
-				} else {
-					alert('something blew up');
-				}
-			});
+		// axios.post('/api/cart', { product })
+		// 	.then(({ data }) => {
+		// 		debugger
+		// 		if (data.success) {
+		// 			this.props.setCart(data.cartItems);
+		// 			this.props.history.push('/cart');
+		// 		} else if (!data.isLoggedIn) {
+		// 			this.props.history.push('/');
+		// 		} else {
+		// 			alert('something blew up');
+		// 		}
+		// 	});
 	};
 
 	render() {

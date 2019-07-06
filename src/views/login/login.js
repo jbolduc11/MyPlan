@@ -12,13 +12,13 @@ class Login extends Component {
 		showRegister: false
 	};
 	login = () => {
-		
+		console.log("hit the login")
 		const loginObj = {
 			email: this.state.email,
 			password: this.state.password
 		};
 		axios.post('/api/login', loginObj).then(({ data }) => {
-			debugger;
+			console.log("back from DB")
 			if (data.success) {
 				this.props.setUser(data.user);
 				this.props.history.push('/products');
@@ -34,15 +34,15 @@ class Login extends Component {
 	};
 	register = registerObj => {
 		debugger;
-		axios.post('/api/register', registerObj).then(({ data }) => {
-			debugger;
-			if (data.success) {
-				this.props.setUser(data.user);
-				this.props.history.push('/products');
-			} else {
-				alert('Email already exists login.');
-			}
-		});
+		// axios.post('/api/register', registerObj).then(({ data }) => {
+		// 	debugger;
+		// 	if (data.success) {
+		// 		this.props.setUser(data.user);
+		// 		this.props.history.push('/products');
+		// 	} else {
+		// 		alert('Email already exists login.');
+		// 	}
+		// });
 	};
 
 	handleChange = (e) => {

@@ -33,6 +33,9 @@ app.use(session({
 app.post('/api/register', authenticate.register)
 app.post('/api/login', authenticate.login)
 
+app.get('/api/test', (req, res, next)=>{
+    res.send('This worked!')
+})
 app.use((req, res, next)=>{
     if(req.session.user){
         next();
@@ -50,9 +53,6 @@ app.post('/api/cart', cart.addToCart)
 app.get('/api/cart', cart.getCart)
 app.delete('/api/cart/:id', cart.removeFromCart)
 
-app.get('/api/test', (req, res, next)=>{
-    res.send('This worked!')
-})
 const port = process.env.PORT || 8065;
 app.listen(port, () => {
     console.log(`Listening on port ${port}`)

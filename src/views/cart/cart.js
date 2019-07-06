@@ -9,28 +9,28 @@ import CartItem from './components/cart_item/cart_item';
 class Cart extends Component {
 
 	componentDidMount(){
-		axios.get('/api/cart')
-		.then(({data})=>{
-			if (data.success) {
-				this.props.setCart(data.cartItems);
-			} else if (!data.isLoggedIn) {
-				this.props.history.push('/');
-			} else {
-				alert('something blew up');
-			}
-		})
+		// axios.get('/api/cart')
+		// .then(({data})=>{
+		// 	if (data.success) {
+		// 		this.props.setCart(data.cartItems);
+		// 	} else if (!data.isLoggedIn) {
+		// 		this.props.history.push('/');
+		// 	} else {
+		// 		alert('something blew up');
+		// 	}
+		// })
 	}
 	removeFromCart = (id) => {
-		axios.delete(`/api/cart/${id}`)
-		.then(({data})=>{
-			if (data.success) {
-				this.props.setCart(data.cartItems);
-			} else if (!data.isLoggedIn) {
-				this.props.history.push('/');
-			} else {
-				alert('something blew up');
-			}
-		})
+		// axios.delete(`/api/cart/${id}`)
+		// .then(({data})=>{
+		// 	if (data.success) {
+		// 		this.props.setCart(data.cartItems);
+		// 	} else if (!data.isLoggedIn) {
+		// 		this.props.history.push('/');
+		// 	} else {
+		// 		alert('something blew up');
+		// 	}
+		// })
 	}
 
 	render() {
