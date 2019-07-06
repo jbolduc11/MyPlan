@@ -11,7 +11,8 @@ class Login extends Component {
 		password: '',
 		showRegister: false
 	};
-	login = () => {
+	login = e => {
+		e.preventDefault()
 		console.log("hit the login")
 		const loginObj = {
 			email: this.state.email,
@@ -53,12 +54,10 @@ class Login extends Component {
 	render() {
 		const register = this.state.showRegister ? <Register register={this.register} /> : '';
 		return (
-		<form action="action_page.php">
+		<form>
 			<div className="login">
 				{register}
-				{this.state.showRegister ? (
-					''
-				) : (
+				{this.state.showRegister ? ('') : (
 					<div>
 						<p>My Plan</p>
 						<input

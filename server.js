@@ -6,12 +6,13 @@ const session = require('express-session');
 const authenticate = require('./server/controller/authenticate');
 const product = require('./server/controller/product');
 const cart = require('./server/controller/cart');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
 
 
-massive(process.env.CONNECTION_STRING)
+massive(process.env.DATABASE_URL)
     .then((dbInstance)=>{
         app.set('db', dbInstance)
         console.log('db is connected')
@@ -19,6 +20,7 @@ massive(process.env.CONNECTION_STRING)
     .catch((err)=>{
         console.log('Db not connected.')
     })
+app.use(express.static(path.join(__dirname, './build')))
 
 app.use(cors())
 app.use(bodyParser.json())
@@ -52,6 +54,12 @@ app.use((req, res, next)=>{
 app.post('/api/cart', cart.addToCart)
 app.get('/api/cart', cart.getCart)
 app.delete('/api/cart/:id', cart.removeFromCart)
+
+app.use('/*', (req, res) => {
+    res.sendFile('index.html', {
+        root: path.join(__dirname, './build')
+    })
+})
 
 const port = process.env.PORT || 8065;
 app.listen(port, () => {
