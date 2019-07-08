@@ -32,6 +32,24 @@ import Product from './components/product/product'
                 <Header/>
                 {products}
             </div>
+            <div>
+            <input 
+            type="text"
+            placeholder="Income"
+            name="income"
+            />
+            <input 
+            type="text"
+            placeholder="Expenses"
+            name="expenses"
+            />
+            <input 
+            type="text"
+            placeholder="Savings"
+            name="savings"
+            />
+        </div>
+
         )
     }
 }
