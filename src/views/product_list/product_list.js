@@ -25,7 +25,7 @@ import Product from './components/product/product'
     }
     render() {
         const products = this.state.products.map((e, r)=>{
-            return <Product key={e.id} id={e.id} name={e.name} price={e.price} description={e.description} image_url={e.image_url}/>
+            return <Product key={e.id} id={e.id} name={e.name} income={e.income} expenses={e.expenses} savings={e.savings} image_url={e.image_url}/>
         })
         return (
             <div>
