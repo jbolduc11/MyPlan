@@ -28,28 +28,29 @@ import Product from './components/product/product'
             return <Product key={e.id} id={e.id} name={e.name} price={e.price} description={e.description} image_url={e.image_url}/>
         })
         return (
-            <div className="product-list">
+            <div>
+                <div className="product-list">
                 <Header/>
                 {products}
+                </div>
+                <div class="budget">
+                    <input 
+                    type="text"
+                    placeholder="Income"
+                    name="income"
+                    />
+                    <input 
+                    type="text"
+                    placeholder="Expenses"
+                    name="expenses"
+                    />
+                    <input 
+                    type="text"
+                    placeholder="Savings"
+                    name="savings"
+                    />
+                </div>
             </div>
-            <div>
-            <input 
-            type="text"
-            placeholder="Income"
-            name="income"
-            />
-            <input 
-            type="text"
-            placeholder="Expenses"
-            name="expenses"
-            />
-            <input 
-            type="text"
-            placeholder="Savings"
-            name="savings"
-            />
-        </div>
-
         )
     }
 }
