@@ -50,6 +50,7 @@ import Product from './components/product/product'
                     name="savings"
                     />
                 </div>
+                <button>Save</button>
             </div>
         )
     }
