@@ -35,15 +35,19 @@ class Login extends Component {
 	};
 	register = registerObj => {
 		debugger;
-		// axios.post('/api/register', registerObj).then(({ data }) => {
-		// 	debugger;
-		// 	if (data.success) {
-		// 		this.props.setUser(data.user);
-		// 		this.props.history.push('/products');
-		// 	} else {
-		// 		alert('Email already exists login.');
-		// 	}
-		// });
+		axios.post('/api/register', registerObj).then(({ data }) => {
+			debugger;
+			if (data.success) {
+				this.props.setUser(data.user);
+				this.props.history.push('/products');
+			} else {
+				alert('Email already exists login.');
+			}
+		})
+		.catch (err=> {
+			debugger
+			console.log("error")
+		}) 
 	};
 
 	handleChange = (e) => {
@@ -54,7 +58,7 @@ class Login extends Component {
 	render() {
 		const register = this.state.showRegister ? <Register register={this.register} /> : '';
 		return (
-		<form>
+	
 			<div className="login">
 				{register}
 				{this.state.showRegister ? ('') : (
@@ -79,7 +83,7 @@ class Login extends Component {
 					</div>
 				)}
 			</div>
-		</form>
+		
 		);
 	}
 }
