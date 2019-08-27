@@ -62,7 +62,7 @@ class Login extends Component {
 			<div className="login">
 				{register}
 				{this.state.showRegister ? ('') : (
-					<div className="login box">
+					<div className="login box" class="center">
 						<p>My Plan</p>
 						<input
 							type="text"
