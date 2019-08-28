@@ -1,0 +1,6 @@
+.product-list {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0px;
+}
