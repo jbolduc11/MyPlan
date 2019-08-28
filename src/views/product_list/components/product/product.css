@@ -1,6 +1,7 @@
 .product-list {
+    background: white;
     position: absolute;
     top: 0;
     right: 0;
-    background: white;
-}
+    
+  }
