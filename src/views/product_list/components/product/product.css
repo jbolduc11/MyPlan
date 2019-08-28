@@ -9,7 +9,7 @@
       text-align: center;
       width: auto;
     }
-div {
+.div {
     justify-content: center;
     align-items: center;
     flex-direction: row;
